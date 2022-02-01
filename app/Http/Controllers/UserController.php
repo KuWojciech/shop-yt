@@ -83,6 +83,11 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $flight = User::find($id);
+
+        $flight->delete();
+        return response()->json([
+            'status' => 'succes'
+        ]);
     }
 }
