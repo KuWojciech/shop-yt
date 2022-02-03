@@ -56,6 +56,7 @@
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="/users/list">Użytkownicy</a>
+                                    <a class="dropdown-item" href="{{ route('products.index') }}">Produkty</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -82,8 +83,7 @@
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript">
-    
-    @yield('javascript')
+     @yield('javascript')
     </script>
         <script src="{{ asset('js/delete.js') }}"></script>
 
