@@ -95,11 +95,11 @@ class ProductController extends Controller
      * @param  Product  $product
      * @return JsonResponse
      */
-    public function destroy(product $product)
+    public function destroy(product $product):JsonResponse
     {
         
         try {
-            $user->delete();
+            $product->delete();
             return response()->json([
             'status' => 'succes'
         ]);
