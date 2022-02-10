@@ -9,6 +9,7 @@ use Illuminate\Routing\Controller;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\UpsertProductRequest;
+use App\Models\ProductCategory;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 
@@ -33,7 +34,10 @@ class ProductController extends Controller
      */
     public function create(): View
     {
-        return view ("products.create");
+        return view ("products.create",[
+            'categories' => ProductCategory::all()
+
+        ]);
     }
 
     /**
@@ -58,7 +62,7 @@ class ProductController extends Controller
      * Display the specified resource.
      *
      * @param  Product  $product
-     * @return View
+     * @return View     
      */
     public function show(product $product):View
     {
@@ -75,8 +79,9 @@ class ProductController extends Controller
      */
     public function edit(product $product): View
     {
-                return view ("products.edit", [
-            'product' => $product
+        return view("products.edit", [
+            'product' => $product,
+            'categories' => ProductCategory::all()
         ]);
     }
 
